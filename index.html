@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERITUS INTERNATIONAL - My Blog Your Blog Our Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #ff4081;
+            --accent-color: #00bcd4;
+            --dark-color: #121212;
+            --light-color: #f8f9fa;
+            --gray-color: #6c757d;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        .dark-mode {
+            --primary-color: #3f51b5;
+            --dark-color: #f8f9fa;
+            --light-color: #121212;
+            --card-bg: #1e1e1e;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            --gray-color: #adb5bd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            transition: var(--transition);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 32px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle, .mobile-toggle {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: var(--dark-color);
+            cursor: pointer;
+            margin-left: 20px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle:hover, .mobile-toggle:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-toggle {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(135deg, rgba(26, 35, 126, 0.05) 0%, rgba(255, 64, 129, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 188, 212, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--gray-color);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 64, 129, 0.4);
+        }
+
+        /* Blog Posts */
+        .blog-section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .blog-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 220px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .blog-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+
+        .card-category {
+            background-color: rgba(26, 35, 126, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+
+        .card-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            color: var(--primary-color);
+        }
+
+        .card-excerpt {
+            color: var(--gray-color);
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            padding-top: 15px;
+        }
+
+        .read-more {
+            color: var(--secondary-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .read-more i {
+            margin-left: 8px;
+            transition: var(--transition);
+        }
+
+        .read-more:hover {
+            color: var(--primary-color);
+        }
+
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Admin Panel Styles */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: var(--card-bg);
+            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+            z-index: 2000;
+            overflow-y: auto;
+            transform: translateX(100%);
+            transition: transform 0.4s ease;
+        }
+
+        .admin-panel.active {
+            transform: translateX(0);
+        }
+
+        .admin-header {
+            padding: 25px;
+            background-color: var(--primary-color);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-header h3 {
+            font-size: 1.5rem;
+        }
+
+        .close-admin {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .admin-content {
+            padding: 25px;
+        }
+
+        .admin-section {
+            margin-bottom: 40px;
+        }
+
+        .admin-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            color: var(--primary-color);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            background-color: var(--card-bg);
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 0 3px rgba(255, 64, 129, 0.2);
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e91e63;
+        }
+
+        .btn-secondary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0d1b6b;
+        }
+
+        .btn-block {
+            width: 100%;
+            display: block;
+        }
+
+        /* Login Modal */
+        .login-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-modal.active {
+            display: flex;
+        }
+
+        .login-box {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+
+        .login-footer {
+            text-align: center;
+            margin-top: 20px;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+
+        .login-footer a {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--secondary-color);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--card-bg);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .admin-panel {
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .card-image {
+                height: 200px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-pen-nib"></i>
+                VERITUS<span>INTERNATIONAL</span>
+            </a>
+            
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content fade-in">
+            <h1>My Blog Your Blog Our Blog</h1>
+            <p>A modern platform for insightful perspectives, transformative narratives, and engaging discourse on politics, economics, entertainment, and societal development.</p>
+            <button class="cta-button" id="exploreBtn">Explore Articles <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section" id="blog">
+        <div class="container">
+            <div class="section-title slide-up">
+                <h2>Latest Articles</h2>
+            </div>
+            
+            <div class="blog-grid" id="blogGrid">
+                <!-- Blog posts will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">VERITUS INTERNATIONAL</div>
+                    <p>A modern blogging platform dedicated to insightful perspectives, transformative narratives, and engaging discourse on contemporary issues.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Politics</a></li>
+                        <li><a href="#">Economy</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Society</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 VERITUS INTERNATIONAL. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Panel -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-header">
+            <h3>Admin Dashboard</h3>
+            <button class="close-admin" id="closeAdmin">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="admin-content">
+            <div class="admin-section">
+                <h4>Add New Admin</h4>
+                <form id="addAdminForm">
+                    <div class="form-group">
+                        <label for="adminName">Full Name</label>
+                        <input type="text" id="adminName" class="form-control" placeholder="Enter full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminEmail">Email Address</label>
+                        <input type="email" id="adminEmail" class="form-control" placeholder="Enter email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" class="form-control" placeholder="Enter password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminRole">Admin Role</label>
+                        <select id="adminRole" class="form-control" required>
+                            <option value="editor">Editor</option>
+                            <option value="moderator">Moderator</option>
+                            <option value="super_admin">Super Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Add Admin</button>
+                </form>
+            </div>
+            
+            <div class="admin-section">
+                <h4>Create New Blog Post</h4>
+                <form id="createPostForm">
+                    <div class="form-group">
+                        <label for="postTitle">Post Title</label>
+                        <input type="text" id="postTitle" class="form-control" placeholder="Enter post title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postCategory">Category</label>
+                        <select id="postCategory" class="form-control" required>
+                            <option value="politics">Politics</option>
+                            <option value="economy">Economy</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="society">Society</option>
+                            <option value="technology">Technology</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="postImage">Image URL</label>
+                        <input type="text" id="postImage" class="form-control" placeholder="Enter image URL" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">Content (First 150 characters will be shown as excerpt)</label>
+                        <textarea id="postContent" class="form-control" rows="5" placeholder="Enter post content" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-secondary btn-block">Publish Post</button>
+                </form>
+            </div>
+            
+            <div class="admin-section">
+                <h4>Manage Admins</h4>
+                <div id="adminList">
+                    <!-- Admin list will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="login-modal" id="loginModal">
+        <div class="login-box">
+            <h3>Admin Login</h3>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" class="form-control" placeholder="Enter admin email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" class="form-control" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+            <div class="login-footer">
+                <p>For super admin access, use email: <strong>admin@veritus.com</strong> and password: <strong>superadmin123</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Super Admin Access Button (Hidden by default) -->
+    <button class="admin-access-btn" id="adminAccessBtn" style="display: none; position: fixed; bottom: 30px; right: 30px; z-index: 100; background: var(--secondary-color); color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 24px; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+        <i class="fas fa-user-shield"></i>
+    </button>
+
+    <script>
+        // Sample blog data (in a real app, this would come from a backend)
+        const blogPosts = [
+            {
+                id: 1,
+                title: "REDEFINING ECONOMIC PARADIGMS: THE TRANSFORMATIONAL LEADERSHIP OF DR. ZACCH ADEDEJI AND PRESIDENT TINUBU IN NIGERIA'S TAX REFORMATION",
+                category: "Economy",
+                date: "February 13, 2025",
+                author: "GOLDSWEATH BABIE",
+                excerpt: "Progress, though often arduous, is indispensable for substantial transformation, and in 2024, Nigeria embarked on a monumental journey of reform catalyzed by astute leadership. Dr. Zacch Adedeji, the Executive Chairman of the Federal Inland Revenue Service (FIRS)...",
+                image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 2,
+                title: "2BABA Brother Charles, speaks his truth About Annie his Brother's wife",
+                category: "Entertainment",
+                date: "January 29, 2025",
+                author: "GOLDSWEATH BABIE",
+                excerpt: "Tuface Idibia's younger brother, Charlybrave, pours his heart out. As posted on his official Instagram account: I pray for composure as I write these and I pray for clarity because there is so much to say...",
+                image: "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 3,
+                title: "THE MAKING OF MODEL AND ASPIRING ACTOR JUSTISE CHUKWUKA",
+                category: "Entertainment",
+                date: "March 19, 2024",
+                author: "GOLDSWEATH BABIE",
+                excerpt: "She was born on July 17th 1997 to a Nigerian Father and African American Mother, Attended Taylor High School and graduated 2014. She has been hard working with positive attitude towards progress...",
+                image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 4,
+                title: "Mrs. Miranda Ombugadu's Valentine Mission: Spreading Love and Relief Across Nasarawa State",
+                category: "Society",
+                date: "February 26, 2024",
+                author: "GOLDSWEATH BABIE",
+                excerpt: "Mrs. Miranda, the wife of the esteemed PDP gubernatorial candidate, Rt. Hon. David Ombugadu, exemplifies compassion and resilience in the face of adversity...",
+                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 5,
+                title: "Dr. David Ombugadu's Triumphant Return: A Hero's Welcome Amidst a Sea of Supporters",
+                category: "Politics",
+                date: "February 26, 2024",
+                author: "GOLDSWEATH BABIE",
+                excerpt: "In the rich tapestry of Nigerian politics, the saga of Dr. David Ombugadu emerges as a stirring testament to resilience, integrity, and the unyielding spirit of democracy...",
+                image: "https://images.unsplash.com/photo-1551135049-8a33b2f2cc1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            },
+            {
+                id: 6,
+                title: "A Kaleidoscope of Joy: Mrs. Olajumoke Ganiyat Abebi's 50th Birthday Extravaganza in Houston, Texas",
+                category: "Society",
+                date: "January 23, 2024",
+                author: "GOLDSWEATH BABIE",
+                excerpt: "In the vibrant city of Houston, Texas, the Expo Events Center bore witness to an extraordinary celebration on January 20, 2024. This marked the golden jubilee of Mrs. Olajumoke Ganiyat Abebi...",
+                image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            }
+        ];
+
+        // Admin data (in a real app, this would be stored in a database with proper authentication)
+        let admins = [
+            { id: 1, name: "Super Admin", email: "admin@veritus.com", role: "super_admin" }
+        ];
+
+        // DOM Elements
+        const themeToggle = document.getElementById('themeToggle');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const blogGrid = document.getElementById('blogGrid');
+        const adminPanel = document.getElementById('adminPanel');
+        const closeAdmin = document.getElementById('closeAdmin');
+        const adminAccessBtn = document.getElementById('adminAccessBtn');
+        const loginModal = document.getElementById('loginModal');
+        const loginForm = document.getElementById('loginForm');
+        const addAdminForm = document.getElementById('addAdminForm');
+        const createPostForm = document.getElementById('createPostForm');
+        const adminList = document.getElementById('adminList');
+        const exploreBtn = document.getElementById('exploreBtn');
+
+        // Current user state
+        let currentUser = null;
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', function() {
+            renderBlogPosts();
+            setupEventListeners();
+            
+            // Check if user was previously logged in
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                currentUser = JSON.parse(savedUser);
+                if (currentUser.role === 'super_admin') {
+                    adminAccessBtn.style.display = 'block';
+                }
+            }
+        });
+
+        // Setup all event listeners
+        function setupEventListeners() {
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+            
+            // Mobile menu toggle
+            mobileToggle.addEventListener('click', toggleMobileMenu);
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Explore button
+            exploreBtn.addEventListener('click', () => {
+                document.getElementById('blog').scrollIntoView({ behavior: 'smooth' });
+            });
+            
+            // Admin panel
+            adminAccessBtn.addEventListener('click', openAdminPanel);
+            closeAdmin.addEventListener('click', closeAdminPanel);
+            
+            // Login form
+            loginForm.addEventListener('submit', handleLogin);
+            
+            // Add admin form
+            addAdminForm.addEventListener('submit', handleAddAdmin);
+            
+            // Create post form
+            createPostForm.addEventListener('submit', handleCreatePost);
+            
+            // Show admin login when clicking admin button without being logged in
+            adminAccessBtn.addEventListener('click', function(e) {
+                if (!currentUser) {
+                    e.preventDefault();
+                    loginModal.classList.add('active');
+                }
+            });
+            
+            // Close login modal when clicking outside
+            loginModal.addEventListener('click', function(e) {
+                if (e.target === loginModal) {
+                    loginModal.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle dark/light theme
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+            
+            // Save theme preference
+            localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            navMenu.classList.toggle('active');
+            const icon = mobileToggle.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Render blog posts to the grid
+        function renderBlogPosts() {
+            blogGrid.innerHTML = '';
+            
+            blogPosts.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.className = 'blog-card slide-up';
+                postElement.innerHTML = `
+                    <div class="card-image">
+                        <img src="${post.image}" alt="${post.title}">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-meta">
+                            <span class="card-category">${post.category}</span>
+                            <span>${post.date}</span>
+                        </div>
+                        <h3 class="card-title">${post.title}</h3>
+                        <p class="card-excerpt">${post.excerpt}</p>
+                        <div class="card-footer">
+                            <span>By ${post.author}</span>
+                            <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                `;
+                
+                blogGrid.appendChild(postElement);
+                
+                // Add click event to read more button
+                postElement.querySelector('.read-more').addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // In a real app, this would navigate to a full article page
+                    alert(`Opening article: "${post.title}"\n\nIn a full application, this would navigate to a detailed view of the blog post with comments, sharing options, and related articles.`);
+                });
+            });
+        }
+
+        // Open admin panel
+        function openAdminPanel() {
+            if (!currentUser) {
+                loginModal.classList.add('active');
+                return;
+            }
+            
+            adminPanel.style.display = 'block';
+            setTimeout(() => {
+                adminPanel.classList.add('active');
+                renderAdminList();
+            }, 10);
+        }
+
+        // Close admin panel
+        function closeAdminPanel() {
+            adminPanel.classList.remove('active');
+            setTimeout(() => {
+                adminPanel.style.display = 'none';
+            }, 400);
+        }
+
+        // Handle login
+        function handleLogin(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            
+            // Simple authentication (in a real app, this would be a secure backend call)
+            if (email === 'admin@veritus.com' && password === 'superadmin123') {
+                currentUser = { id: 1, name: "Super Admin", email: email, role: "super_admin" };
+                localStorage.setItem('currentUser', JSON.stringify(currentUser));
+                
+                loginModal.classList.remove('active');
+                adminAccessBtn.style.display = 'block';
+                
+                // Show success message
+                showNotification('Login successful! Welcome, Super Admin.', 'success');
+                
+                // Clear form
+                loginForm.reset();
+                
+                // Open admin panel
+                openAdminPanel();
+            } else {
+                showNotification('Invalid credentials. Please try again.', 'error');
+            }
+        }
+
+        // Handle adding a new admin
+        function handleAddAdmin(e) {
+            e.preventDefault();
+            
+            if (!currentUser || currentUser.role !== 'super_admin') {
+                showNotification('Only super admins can add new admins.', 'error');
+                return;
+            }
+            
+            const name = document.getElementById('adminName').value;
+            const email = document.getElementById('adminEmail').value;
+            const password = document.getElementById('adminPassword').value;
+            const role = document.getElementById('adminRole').value;
+            
+            // Generate a simple ID (in a real app, this would be handled by the backend)
+            const newAdmin = {
+                id: admins.length + 1,
+                name: name,
+                email: email,
+                role: role
+            };
+            
+            admins.push(newAdmin);
+            renderAdminList();
+            
+            // Show success message
+            showNotification(`Admin ${name} added successfully!`, 'success');
+            
+            // Clear form
+            addAdminForm.reset();
+        }
+
+        // Handle creating a new blog post
+        function handleCreatePost(e) {
+            e.preventDefault();
+            
+            if (!currentUser) {
+                showNotification('You must be logged in to create a post.', 'error');
+                return;
+            }
+            
+            const title = document.getElementById('postTitle').value;
+            const category = document.getElementById('postCategory').value;
+            const image = document.getElementById('postImage').value;
+            const content = document.getElementById('postContent').value;
+            
+            // Generate a simple ID (in a real app, this would be handled by the backend)
+            const newPost = {
+                id: blogPosts.length + 1,
+                title: title,
+                category: category.charAt(0).toUpperCase() + category.slice(1),
+                date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+                author: currentUser.name,
+                excerpt: content.substring(0, 150) + '...',
+                image: image || getDefaultImageForCategory(category)
+            };
+            
+            blogPosts.unshift(newPost); // Add to beginning of array
+            renderBlogPosts();
+            
+            // Show success message
+            showNotification('Blog post published successfully!', 'success');
+            
+            // Clear form
+            createPostForm.reset();
+            
+            // Close admin panel
+            closeAdminPanel();
+        }
+
+        // Render admin list
+        function renderAdminList() {
+            adminList.innerHTML = '';
+            
+            admins.forEach(admin => {
+                const adminElement = document.createElement('div');
+                adminElement.className = 'admin-item';
+                adminElement.style.cssText = 'padding: 15px; background: rgba(0,0,0,0.03); border-radius: 8px; margin-bottom: 10px;';
+                adminElement.innerHTML = `
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>${admin.name}</strong>
+                            <div style="font-size: 0.9rem; color: var(--gray-color);">${admin.email}</div>
+                            <div style="display: inline-block; background: ${admin.role === 'super_admin' ? '#ff4081' : '#1a237e'}; color: white; padding: 3px 10px; border-radius: 50px; font-size: 0.8rem; margin-top: 5px;">${admin.role.replace('_', ' ').toUpperCase()}</div>
+                        </div>
+                        ${admin.id !== 1 ? `<button class="btn" style="padding: 5px 10px; font-size: 0.9rem;" onclick="removeAdmin(${admin.id})">Remove</button>` : ''}
+                    </div>
+                `;
+                
+                adminList.appendChild(adminElement);
+            });
+        }
+
+        // Remove admin (only for non-super admins)
+        function removeAdmin(adminId) {
+            if (!currentUser || currentUser.role !== 'super_admin') {
+                showNotification('Only super admins can remove admins.', 'error');
+                return;
+            }
+            
+            // Don't allow removal of the main super admin (id: 1)
+            if (adminId === 1) {
+                showNotification('Cannot remove the main super admin.', 'error');
+                return;
+            }
+            
+            admins = admins.filter(admin => admin.id !== adminId);
+            renderAdminList();
+            showNotification('Admin removed successfully.', 'success');
+        }
+
+        // Get default image based on category
+        function getDefaultImageForCategory(category) {
+            const defaultImages = {
+                politics: 'https://images.unsplash.com/photo-1551135049-8a33b2f2cc1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                economy: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                entertainment: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                society: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80',
+                technology: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'
+            };
+            
+            return defaultImages[category] || defaultImages.politics;
+        }
+
+        // Show notification
+        function showNotification(message, type) {
+            // Remove any existing notification
+            const existingNotification = document.querySelector('.notification');
+            if (existingNotification) {
+                existingNotification.remove();
+            }
+            
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification notification-${type}`;
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 100px;
+                right: 30px;
+                padding: 15px 25px;
+                background: ${type === 'success' ? '#4caf50' : '#f44336'};
+                color: white;
+                border-radius: 8px;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+                z-index: 9999;
+                font-weight: 500;
+                transform: translateX(150%);
+                transition: transform 0.3s ease;
+                max-width: 350px;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            // Animate in
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // Remove after 5 seconds
+            setTimeout(() => {
+                notification.style.transform = 'translateX(150%)';
+                setTimeout(() => {
+                    if (notification.parentNode) {
+                        notification.parentNode.removeChild(notification);
+                    }
+                }, 300);
+            }, 5000);
+        }
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            const icon = themeToggle.querySelector('i');
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
+        
+        // Add animation to elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe blog cards
+        document.querySelectorAll('.blog-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
