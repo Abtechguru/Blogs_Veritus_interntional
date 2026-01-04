@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBODE 2027 - The Return of Excellence | Sponsored by Odo-Ayan Movement</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ambode-blue: #00509E;
+            --ambode-gold: #FFD700;
+            --ambode-light: #E8F4FF;
+            --campaign-red: #C8102E;
+            --campaign-green: #00843D;
+            --dark-color: #121212;
+            --light-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--ambode-light) 0%, #ffffff 100%);
+            color: var(--dark-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .campaign-header {
+            background: linear-gradient(135deg, var(--ambode-blue) 0%, #003366 100%);
+            color: white;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .campaign-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23FFD700' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .campaign-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .campaign-logo-icon {
+            background-color: var(--ambode-gold);
+            color: var(--ambode-blue);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .campaign-logo-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .campaign-logo-text h1 {
+            font-size: 28px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .campaign-logo-text .subtitle {
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .sponsor-badge {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            border-left: 4px solid var(--ambode-gold);
+        }
+
+        .sponsor-badge strong {
+            color: var(--ambode-gold);
+        }
+
+        /* Hero Section */
+        .campaign-hero {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h2 {
+            font-size: 3.5rem;
+            color: var(--ambode-blue);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text h2 span {
+            color: var(--campaign-red);
+            position: relative;
+        }
+
+        .hero-text h2 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--ambode-gold);
+            opacity: 0.4;
+            z-index: -1;
+        }
+
+        .hero-text .tagline {
+            font-size: 1.5rem;
+            color: var(--campaign-green);
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 4px solid var(--ambode-gold);
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #444;
+        }
+
+        .hero-image {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 80, 158, 0.2);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--ambode-gold);
+            color: var(--ambode-blue);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Campaign Stats */
+        .campaign-stats {
+            padding: 80px 0;
+            background-color: var(--ambode-light);
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--ambode-blue);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 50px;
+            color: var(--ambode-blue);
+            margin-bottom: 20px;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--ambode-blue);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--ambode-blue);
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 4px;
+            background-color: var(--ambode-gold);
+            border-radius: 2px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .achievement-card {
+            background-color: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 5px solid var(--campaign-green);
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .achievement-header {
+            padding: 25px 25px 15px;
+            background-color: var(--ambode-blue);
+            color: white;
+        }
+
+        .achievement-header h3 {
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .achievement-header i {
+            margin-right: 15px;
+            color: var(--ambode-gold);
+            font-size: 1.8rem;
+        }
+
+        .achievement-body {
+            padding: 25px;
+        }
+
+        .achievement-body p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .achievement-list {
+            list-style: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            font-size: 16px;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .achievement-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+
+        .achievement-list i {
+            color: var(--campaign-green);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Campaign Vision */
+        .vision-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--ambode-blue) 0%, #003366 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .vision-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .vision-title {
+            font-size: 2.8rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .vision-title span {
+            color: var(--ambode-gold);
+        }
+
+        .vision-points {
+            list-style: none;
+        }
+
+        .vision-points li {
+            margin-bottom: 25px;
+            padding-left: 40px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .vision-points li i {
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--ambode-gold);
+            font-size: 1.5rem;
+        }
+
+        .vision-image {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 5px solid var(--ambode-gold);
+        }
+
+        .vision-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Call to Action */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background-color: var(--ambode-light);
+        }
+
+        .cta-box {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 60px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(90deg, var(--ambode-blue) 0%, var(--campaign-green) 50%, var(--ambode-gold) 100%);
+        }
+
+        .cta-box h2 {
+            font-size: 2.5rem;
+            color: var(--ambode-blue);
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cta-button.primary {
+            background-color: var(--ambode-blue);
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 80, 158, 0.3);
+        }
+
+        .cta-button.primary:hover {
+            background-color: #003366;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 80, 158, 0.4);
+        }
+
+        .cta-button.secondary {
+            background-color: transparent;
+            color: var(--ambode-blue);
+            border: 2px solid var(--ambode-blue);
+        }
+
+        .cta-button.secondary:hover {
+            background-color: var(--ambode-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .cta-button i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* Sponsor Section */
+        .sponsor-section {
+            padding: 80px 0;
+            background-color: var(--ambode-blue);
+            color: white;
+            text-align: center;
+        }
+
+        .sponsor-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .sponsor-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .sponsor-icon {
+            background-color: var(--ambode-gold);
+            color: var(--ambode-blue);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        .sponsor-text h3 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--ambode-gold);
+        }
+
+        .sponsor-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .sponsor-message {
+            font-size: 1.3rem;
+            font-style: italic;
+            margin-top: 40px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            border-left: 5px solid var(--ambode-gold);
+        }
+
+        .sponsor-message strong {
+            color: var(--ambode-gold);
+        }
+
+        /* Footer */
+        .campaign-footer {
+            background-color: #111;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--ambode-gold);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+            line-height: 1.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            font-size: 1.2rem;
+        }
+
+        .social-links a:hover {
+            background-color: var(--ambode-gold);
+            color: var(--ambode-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+            color: var(--ambode-gold);
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--ambode-gold);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--ambode-gold);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content, .vision-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero-text h2 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .vision-title {
+                font-size: 2.3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .campaign-logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .campaign-logo-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .hero-text h2 {
+                font-size: 2.3rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-box {
+                padding: 40px 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .sponsor-logo {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .sponsor-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-box h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s ease;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                 </ul>
+    <!-- Campaign Header -->
+    <header class="campaign-header">
+        <div class="container header-container">
+            <div class="campaign-logo">
+                <div class="campaign-logo-icon">
+                    AA
+                </div>
+                <div class="campaign-logo-text">
+                    <h1>AMBODE 2027</h1>
+                    <div class="subtitle">The Return of Excellence</div>
+                </div>
+            </div>
+            
+            <div class="sponsor-badge">
+                Sponsored by: <strong>Lanrewaju Lawal</strong> <br>
+                <em>Odo-Ayan Movement</em>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="campaign-hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <div class="hero-text">
+                    <h2>HIS EXCELLENCY <span>ISHOLA AKINWUNMI AMBODE</span></h2>
+                    <div class="tagline">The People's Governor Returns</div>
+                    <p>After a transformative tenure that reshaped Lagos State with visionary leadership, pragmatic governance, and unprecedented infrastructural development, the call for his return grows louder. The people remember, the people demand, and the people deserve continuity of excellence.</p>
+                    <p>Join the movement to bring back the architect of modern Lagos, a leader who proved that governance can be both effective and compassionate.</p>
+                </div>
+                <div class="hero-image slide-up">
+                    <img src="Akinwunmi-Ambode.jpg" alt="His Excellency Ishola Akinwunmi Ambode">
+                    <div class="image-badge pulse">
+                        <i class="fas fa-star"></i> EXCELLENCE PERSONIFIED
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaign Stats -->
+    <section class="campaign-stats">
+        <div class="container">
+            <div class="stats-container">
+                <div class="stat-card slide-up">
+                    <div class="stat-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <div class="stat-number">181</div>
+                    <div class="stat-label">Roads Constructed & Rehabilitated</div>
+                </div>
+                
+                <div class="stat-card slide-up">
+                    <div class="stat-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="stat-number">1,047</div>
+                    <div class="stat-label">Classrooms Built & Renovated</div>
+                </div>
+                
+                <div class="stat-card slide-up">
+                    <div class="stat-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">Healthcare Facilities Upgraded</div>
+                </div>
+                
+                <div class="stat-card slide-up">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Jobs Created</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>TRANSFORMATIVE ACHIEVEMENTS</h2>
+            </div>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card slide-up">
+                    <div class="achievement-header">
+                        <h3><i class="fas fa-city"></i> INFRASTRUCTURAL REVOLUTION</h3>
+                    </div>
+                    <div class="achievement-body">
+                        <p>Governor Ambode's administration was characterized by massive infrastructural development that transformed Lagos into a truly modern megacity.</p>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-check-circle"></i> Oshodi Transport Interchange - World-class facility</li>
+                            <li><i class="fas fa-check-circle"></i> Lagos Theatre in Oregun</li>
+                            <li><i class="fas fa-check-circle"></i> Complete overhaul of Lagos Island</li>
+                            <li><i class="fas fa-check-circle"></i> Modernization of Lagos water transportation</li>
+                            <li><i class="fas fa-check-circle"></i> Construction of the Lagos Airport Road</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="achievement-card slide-up">
+                    <div class="achievement-header">
+                        <h3><i class="fas fa-shield-alt"></i> SECURITY & SAFETY</h3>
+                    </div>
+                    <div class="achievement-body">
+                        <p>Under his leadership, Lagos became one of the safest states in Nigeria through strategic investments in security infrastructure.</p>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-check-circle"></i> Lagos State Security Trust Fund revitalization</li>
+                            <li><i class="fas fa-check-circle"></i> Procurement of 100 patrol vehicles, 4 armored personnel carriers</li>
+                            <li><i class="fas fa-check-circle"></i> Establishment of Lagos State Emergency Management</li>
+                            <li><i class="fas fa-check-circle"></i> Installation of 10,000 street lights across the state</li>
+                            <li><i class="fas fa-check-circle"></i> CCTV surveillance system across strategic locations</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="achievement-card slide-up">
+                    <div class="achievement-header">
+                        <h3><i class="fas fa-heart"></i> SOCIAL WELFARE & EMPOWERMENT</h3>
+                    </div>
+                    <div class="achievement-body">
+                        <p>Ambode's government prioritized the welfare of Lagosians through innovative social programs and economic empowerment.</p>
+                        <ul class="achievement-list">
+                            <li><i class="fas fa-check-circle"></i> N25 billion Employment Trust Fund</li>
+                            <li><i class="fas fa-check-circle"></i> "Ready, Set, Work" youth employability program</li>
+                            <li><i class="fas fa-check-circle"></i> Lagos State Empowerment Trust Fund</li>
+                            <li><i class="fas fa-check-circle"></i> Free health missions across all LGAs</li>
+                            <li><i class="fas fa-check-circle"></i> Support for widows and vulnerable citizens</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <div class="container">
+            <div class="vision-container">
+                <div class="vision-text fade-in">
+                    <h2 class="vision-title">THE <span>2027 VISION</span></h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 30px;">The return of His Excellency Ishola Akinwunmi Ambode represents more than a political comeback—it symbolizes the restoration of purposeful governance, accountability, and transformative leadership.</p>
+                    
+                    <ul class="vision-points">
+                        <li><i class="fas fa-bullseye"></i> <strong>Lagos 2.0:</strong> Advancing the smart city agenda with digital infrastructure and innovation hubs</li>
+                        <li><i class="fas fa-hand-holding-usd"></i> <strong>Economic Renaissance:</strong> Creating 1 million new jobs through strategic partnerships and entrepreneurship support</li>
+                        <li><i class="fas fa-home"></i> <strong>Affordable Housing:</strong> Delivering 100,000 affordable housing units across all senatorial districts</li>
+                        <li><i class="fas fa-graduation-cap"></i> <strong>Education Revolution:</strong> Complete digitization of public schools and free digital skills training for all students</li>
+                        <li><i class="fas fa-leaf"></i> <strong>Green Lagos:</strong> Making Lagos Africa's first carbon-neutral megacity through sustainable policies</li>
+                    </ul>
+                </div>
+                
+                <div class="vision-image slide-up">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Vision for Lagos 2027">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box slide-up">
+                <h2>JOIN THE MOVEMENT</h2>
+                <p>Be part of history in the making. Your support, voice, and vote will determine the future of Lagos State. Let's bring back excellence, let's bring back Ambode!</p>
+                
+                <div class="cta-buttons">
+                    <button class="cta-button primary" id="volunteerBtn">
+                        <i class="fas fa-hands-helping"></i> BECOME A VOLUNTEER
+                    </button>
+                    <button class="cta-button secondary" id="donateBtn">
+                        <i class="fas fa-donate"></i> SUPPORT THE CAMPAIGN
+                    </button>
+                    <button class="cta-button secondary" id="shareBtn">
+                        <i class="fas fa-share-alt"></i> SHARE THE MOVEMENT
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsor Section -->
+    <section class="sponsor-section">
+        <div class="container">
+            <div class="sponsor-content fade-in">
+                <div class="sponsor-logo">
+                    <div class="sponsor-icon">
+                        OAM
+                    </div>
+                    <div class="sponsor-text">
+                        <h3>ODO-AYAN MOVEMENT</h3>
+                        <p>Grassroots mobilization for progressive leadership</p>
+                    </div>
+                </div>
+                
+                <div class="sponsor-message">
+                    <p>"As the sponsor of this movement, I, <strong>Lanrewaju Lawal</strong>, believe in the transformative leadership of His Excellency Ishola Akinwunmi Ambode. We witnessed his exceptional performance as Governor and we are convinced that Lagos needs his return for continuity of excellence and completion of the transformation agenda."</p>
+                    <p style="margin-top: 20px; font-size: 1.1rem;">- <strong>Lanrewaju Lawal</strong>, Convener, Odo-Ayan Movement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="campaign-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">AMBODE 2027</div>
+                    <p>The campaign to return His Excellency Ishola Akinwunmi Ambode to Lagos State Government House. Join us in restoring excellence in governance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">About Ambode</a></li>
+                        <li><a href="#">Campaign Manifesto</a></li>
+                        <li><a href="#">Achievements</a></li>
+                        <li><a href="#">Volunteer</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Campaign Offices</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Lagos Headquarters: Ikeja</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ikorodu Division Office</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Badagry Division Office</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Epe Division Office</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Odo-Ayan Movement HQ</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AMBODE 2027 Campaign. Sponsored by Lanrewaju Lawal (Odo-Ayan Movement). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const volunteerBtn = document.getElementById('volunteerBtn');
+        const donateBtn = document.getElementById('donateBtn');
+        const shareBtn = document.getElementById('shareBtn');
+
+        // Initialize the campaign page
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            startCountAnimations();
+        });
+
+        // Setup all event listeners
+        function setupEventListeners() {
+            // Volunteer button
+            volunteerBtn.addEventListener('click', function() {
+                showModal('Volunteer Registration', `
+                    <div style="text-align: left;">
+                        <p>Join thousands of Lagosians working to bring back excellence to Lagos State. Fill out the form below to become a volunteer:</p>
+                        
+                        <div style="margin-top: 20px;">
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Full Name</label>
+                                <input type="text" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="Enter your full name">
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Email Address</label>
+                                <input type="email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="Enter your email">
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Phone Number</label>
+                                <input type="tel" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="Enter your phone number">
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: block; margin-bottom: 5px; font-weight: 500;">Local Government Area</label>
+                                <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+                                    <option value="">Select your LGA</option>
+                                    <option value="ikeja">Ikeja</option>
+                                    <option value="surulere">Surulere</option>
+                                    <option value="alimosho">Alimosho</option>
+                                    <option value="kosofe">Kosofe</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <button style="background-color: #00509E; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-weight: 600; width: 100%; cursor: pointer;">
+                                SUBMIT VOLUNTEER FORM
+                            </button>
+                        </div>
+                    </div>
+                `);
+            });
+
+            // Donate button
+            donateBtn.addEventListener('click', function() {
+                showModal('Support the Campaign', `
+                    <div style="text-align: center;">
+                        <p style="font-size: 1.2rem; margin-bottom: 20px;">Your financial support will help us reach every corner of Lagos State.</p>
+                        
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-bottom: 30px;">
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; cursor: pointer; transition: all 0.3s;" onclick="selectDonation(1000)">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #00509E;">₦1,000</div>
+                                <div style="font-size: 0.9rem; color: #666;">Grassroots Supporter</div>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; cursor: pointer; transition: all 0.3s;" onclick="selectDonation(5000)">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #00509E;">₦5,000</div>
+                                <div style="font-size: 0.9rem; color: #666;">Active Supporter</div>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; cursor: pointer; transition: all 0.3s;" onclick="selectDonation(10000)">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #00509E;">₦10,000</div>
+                                <div style="font-size: 0.9rem; color: #666;">Campaign Partner</div>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 20px; border-radius: 8px; cursor: pointer; transition: all 0.3s;" onclick="selectDonation(50000)">
+                                <div style="font-size: 1.5rem; font-weight: 700; color: #00509E;">₦50,000</div>
+                                <div style="font-size: 0.9rem; color: #666;">Major Donor</div>
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; text-align: left; margin-bottom: 5px; font-weight: 500;">Custom Amount</label>
+                            <input type="number" id="customAmount" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" placeholder="Enter custom amount">
+                        </div>
+                        
+                        <button onclick="processDonation()" style="background-color: #00843D; color: white; padding: 12px 30px; border: none; border-radius: 5px; font-weight: 600; width: 100%; cursor: pointer;">
+                            PROCEED TO DONATION
+                        </button>
+                        
+                        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">All donations are properly accounted for and will be used exclusively for campaign activities.</p>
+                    </div>
+                `);
+            });
+
+            // Share button
+            shareBtn.addEventListener('click', function() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'AMBODE 2027 Campaign',
+                        text: 'Join the movement to bring back His Excellency Ishola Akinwunmi Ambode as Governor of Lagos State!',
+                        url: window.location.href
+                    });
+                } else {
+                    showModal('Share the Movement', `
+                        <div style="text-align: center;">
+                            <p style="font-size: 1.2rem; margin-bottom: 20px;">Help spread the word about the Ambode 2027 campaign!</p>
+                            
+                            <div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 30px;">
+                                <div style="background-color: #3b5998; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer;">
+                                    <i class="fab fa-facebook-f"></i>
+                                </div>
+                                
+                                <div style="background-color: #1da1f2; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer;">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                                
+                                <div style="background-color: #25d366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer;">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                
+                                <div style="background-color: #e1306c; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer;">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                            </div>
+                            
+                            <div style="background-color: #f5f5f5; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                                <p style="font-size: 0.9rem; margin-bottom: 10px; text-align: left;">Copy this link to share:</p>
+                                <input type="text" id="shareLink" value="${window.location.href}" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 3px; font-size: 0.9rem;" readonly>
+                            </div>
+                            
+                            <button onclick="copyShareLink()" style="background-color: #00509E; color: white; padding: 10px 20px; border: none; border-radius: 5px; font-weight: 600; cursor: pointer;">
+                                COPY LINK
+                            </button>
+                        </div>
+                    `);
+                }
+            });
+        }
+
+        // Show modal function
+        function showModal(title, content) {
+            // Remove any existing modal
+            const existingModal = document.querySelector('.campaign-modal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Create modal element
+            const modal = document.createElement('div');
+            modal.className = 'campaign-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.7);
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+            `;
+            
+            modal.innerHTML = `
+                <div style="background-color: white; border-radius: 12px; width: 100%; max-width: 500px; overflow: hidden;">
+                    <div style="background-color: #00509E; color: white; padding: 20px; display: flex; justify-content: space-between; align-items: center;">
+                        <h3 style="margin: 0; font-size: 1.5rem;">${title}</h3>
+                        <button onclick="this.closest('.campaign-modal').remove()" style="background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer;">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div style="padding: 30px;">
+                        ${content}
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+        }
+
+        // Select donation amount
+        function selectDonation(amount) {
+            document.getElementById('customAmount').value = amount;
+            
+            // Highlight selected donation
+            document.querySelectorAll('[onclick^="selectDonation"]').forEach(el => {
+                el.style.backgroundColor = '#f5f5f5';
+                el.style.transform = 'scale(1)';
+            });
+            
+            event.currentTarget.style.backgroundColor = '#e8f4ff';
+            event.currentTarget.style.transform = 'scale(1.05)';
+        }
+
+        // Process donation
+        function processDonation() {
+            const amount = document.getElementById('customAmount').value;
+            if (!amount || amount < 100) {
+                alert('Please enter a valid donation amount (minimum ₦100).');
+                return;
+            }
+            
+            showModal('Thank You!', `
+                <div style="text-align: center; padding: 20px 0;">
+                    <div style="font-size: 4rem; color: #00843D; margin-bottom: 20px;">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 style="color: #00509E; margin-bottom: 15px;">DONATION RECEIVED</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">Thank you for your donation of <strong>₦${Number(amount).toLocaleString()}</strong> to the AMBODE 2027 campaign.</p>
+                    <p style="color: #666;">Your contribution will help us reach every Lagosian with our message of excellence and transformation.</p>
+                </div>
+            `);
+        }
+
+        // Copy share link
+        function copyShareLink() {
+            const shareLink = document.getElementById('shareLink');
+            shareLink.select();
+            shareLink.setSelectionRange(0, 99999);
+            document.execCommand('copy');
+            
+            alert('Link copied to clipboard!');
+        }
+
+        // Start count animations
+        function startCountAnimations() {
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const statNumber = entry.target.querySelector('.stat-number');
+                        if (statNumber && !statNumber.classList.contains('animated')) {
+                            animateCounter(statNumber);
+                            statNumber.classList.add('animated');
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe stat cards
+            document.querySelectorAll('.stat-card').forEach(card => {
+                observer.observe(card);
+            });
+        }
+
+        // Animate counter
+        function animateCounter(element) {
+            const target = parseInt(element.textContent.replace(/,/g, ''));
+            const duration = 2000;
+            const steps = 60;
+            const increment = target / steps;
+            let current = 0;
+            let step = 0;
+            
+            const timer = setInterval(() => {
+                step++;
+                current = Math.round(increment * step);
+                if (step >= steps) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = current.toLocaleString();
+            }, duration / steps);
+        }
+
+        // Add animation to elements on scroll
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('slide-up');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        // Observe elements for animation
+        document.querySelectorAll('.slide-up-initial').forEach(el => {
+            scrollObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
